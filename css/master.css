@@ -1,0 +1,106 @@
+body{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  background: #f9f9f9;
+  padding-bottom: 2em;
+}
+.main{
+  width: 65em;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.container{
+  text-align: center;
+  padding: 2em;
+  width: 75em;
+  margin: 0 auto;
+}
+h1{
+  font-size: 2.5rem;
+  padding: 0 0.2em;
+  font-weight: 200;
+  display: inline-block;
+  margin: 0;
+}
+.github{
+  font-size: 2rem;
+  color: #222;
+  position: fixed;
+  top:0.25em;
+  right: 0.5em;
+}
+.box{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 11em);
+  grid-gap: 3px;
+  justify-content: center;
+}
+.element{
+  display: flex;
+}
+.element:nth-child(3n+0){
+  grid-row-end: span 2;
+}
+.element img{
+  max-width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.element img:hover{
+  opacity: 0.98;
+}
+.screen{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top:0;
+  left: 0;
+  display: none;
+  background: rgba(255,255,255,0.85);
+}
+.screen .image{
+  height: 100%;
+  display: flex;
+justify-content: center; /* align horizontal */
+align-items: center; /* align vertical */
+}
+.screen .image img{
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+.bt{
+  width: 30px;
+  height: 30px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  vertical-align: middle;
+  display: inline-block;
+  font-weight: 600;
+  cursor: pointer;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.bt:hover{
+  background:rgba(0,0,0,0.8);
+}
+.close,.full{
+  position: fixed;
+  top:0.5em;
+}
+.close,.nxt{
+  right: 0.5em;
+}
+.full,.prev{
+  left: 0.5em;
+}
+.prev,.nxt{
+  position: fixed;
+  bottom: 50%;
+}
