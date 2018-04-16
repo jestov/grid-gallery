@@ -1,2 +1,2 @@
 # grid-gallery
-A simple and light Masonry Gallery
+A simple and light Grid Gallery
