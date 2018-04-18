@@ -1,34 +1,42 @@
-$(".element img").click(function(){
+$(".element").click(function(){
+  var selected=$(this);
+  var prev=$(this).prev().find('img');
+  var next=$(this).next().find('img');
   $('#screen').show();
   var l=$(".element").length;
+  var p=$(".element").index(selected);
   if (l > 1) {
-    $("#screen").html('<div class="full bt">&#11016</div><div class="close bt">&times</div><div class="image"></div><div class="prev bt">&larr;</div><div class="nxt bt">&rarr;</div>');
+    if (p == 0){
+      $("#screen").html('<div class="full bt">&#11016</div><div class="close bt">&times</div><div class="image"></div><div class="nxt bt">&rarr;</div>');
+    }
+    else if (p == l) {
+      $("#screen").html('<div class="full bt">&#11016</div><div class="close bt">&times</div><div class="image"></div><div class="prev bt">&larr;</div>');
+    }
+    else{
+      $("#screen").html('<div class="full bt">&#11016</div><div class="close bt">&times</div><div class="image"></div><div class="nxt bt">&rarr;</div><div class="prev bt">&larr;</div>');
+    }
   }
   else{
     $("#screen").html('<div class="full bt">&#11016</div><div class="close bt">&times</div><div class="image"></div>');
   }
-  $(".image").html('<img src="'+ $(this).attr('src') +'">');
+  $(".image").html('<img src="'+ $('img', this).attr('src') +'">');
   $("body").css('overflow','hidden');
-
-
+  $("#screen .close").click(function(){
+    $("#screen").hide();
+    $("body").css('overflow','auto');
+  });
+  $(".prev").click(function(){
+    selected=selected.prev();
+    $(".image").html('<img src="'+ prev.attr('src') +'">');
+    prev=selected.prev().find('img');
+    p=$(".element").index(selected);
+  });
+  $(".nxt").click(function(){
+    selected=selected.next();
+    $(".image").html('<img src="'+ next.attr('src') +'">');
+    next=selected.next().find('img');
+    p=$(".element").index(selected);
+  });
   $(".full").click(function(){
-    alert("mmgm");
-    var e = new Event('keypress');
-      e.which = 122; // Character F11 equivalent.
-      e.altKey=false;
-      e.ctrlKey=false;
-      e.shiftKey=false;
-      e.metaKey=false;
-      e.bubbles=true;
-      document.dispatchEvent(e);
   });
 });
-$("#screen,#screen .close").click(function(){
-  $("#screen").hide();
-  $("body").css('overflow','auto');
-});
-
-
-for (var i = 0; i < l; i++) {
-
-}
