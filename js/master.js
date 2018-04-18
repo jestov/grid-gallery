@@ -8,17 +8,17 @@ $(document).on('click','.element',function(){
   function buttons(){
     if (l > 1) {
       if (p == 0){
-        return '<div class="full bt">&#11016</div><div class="close bt">&times</div><div class="nxt bt">&rarr;</div>';
+        return '<div class="close bt">&times</div><div class="nxt bt">&rarr;</div>';
       }
       else if (p == l) {
-        return '<div class="full bt">&#11016</div><div class="close bt">&times</div><div class="prev bt">&larr;</div>';
+        return '<div class="close bt">&times</div><div class="prev bt">&larr;</div>';
       }
       else{
-        return '<div class="full bt">&#11016</div><div class="close bt">&times</div><div class="nxt bt">&rarr;</div><div class="prev bt">&larr;</div>';
+        return '<div class="close bt">&times</div><div class="nxt bt">&rarr;</div><div class="prev bt">&larr;</div>';
       }
     }
     else{
-      return '<div class="full bt">&#11016</div><div class="close bt">&times</div>';
+      return '<div class="close bt">&times</div>';
     }
   }
   buttons();
@@ -40,7 +40,7 @@ $(document).on('click','.element',function(){
     content=buttons();
     $("#screen").html('<div class="image">'+ previmg + '</div>' + content);
   });
-  $(document).on('click','.nxt',function(){
+  $('.nxt').on('click','.nxt',function(){
     selected=selected.next();
     next=selected.find('img');
     var nxtimg='<img src="'+ next.attr('src') +'">';
@@ -50,6 +50,26 @@ $(document).on('click','.element',function(){
     content=buttons();
     $("#screen").html('<div class="image">'+ nxtimg + '</div>' + content);
   });
-  $(document).on('click','.full',function(){
+  $(document).on('keydown',function(e) {
+    if(e.keyCode == 37 && p>0) { // left
+      selected=selected.prev();
+      prev=selected.find('img');
+      var previmg='<img src="'+ prev.attr('src') +'">';
+      $(".image").html(previmg);
+      p=$(".element").index(selected);
+      buttons();
+      content=buttons();
+      $("#screen").html('<div class="image">'+ previmg + '</div>' + content);
+    }
+    else if(e.keyCode == 39 && p < l) { // right
+      selected=selected.next();
+      next=selected.find('img');
+      var nxtimg='<img src="'+ next.attr('src') +'">';
+      $(".image").html(nxtimg);
+      p=$(".element").index(selected);
+      buttons();
+      content=buttons();
+      $("#screen").html('<div class="image">'+ nxtimg + '</div>' + content);
+    }
   });
 });

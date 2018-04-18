@@ -90,14 +90,14 @@ align-items: center; /* align vertical */
 .bt:hover{
   background:rgba(0,0,0,0.8);
 }
-.close,.full{
+.close{
   position: fixed;
   top:0.5em;
 }
 .close,.nxt{
   right: 0.5em;
 }
-.full,.prev{
+.prev{
   left: 0.5em;
 }
 .prev,.nxt{
