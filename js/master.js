@@ -18,7 +18,7 @@ $(document).on('click','.gg-element',function(){
       }
     }
     else{
-      return '<div class="close gg-bt">&times</div>';
+      return '<div class="gg-close gg-bt">&times</div>';
     }
   }
   buttons();
