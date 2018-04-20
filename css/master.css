@@ -1,33 +1,3 @@
-body{
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  background: #f9f9f9;
-  padding-bottom: 2em;
-}
-.main{
-  width: 65em;
-  margin: 0 auto;
-  max-width: 100%;
-}
-.container{
-  text-align: center;
-  padding: 2em;
-  width: 75em;
-  margin: 0 auto;
-}
-h1{
-  font-size: 2.5rem;
-  padding: 0 0.2em;
-  font-weight: 200;
-  display: inline-block;
-  margin: 0;
-}
-.github{
-  font-size: 2rem;
-  color: #222;
-  position: fixed;
-  top:0.25em;
-  right: 0.5em;
-}
 .gg-box{
   display: grid;
   grid-template-columns: repeat(auto-fill, 11em);
