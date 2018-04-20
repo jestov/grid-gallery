@@ -1,75 +1,75 @@
-$(document).on('click','.element',function(){
+$(document).on('click','.gg-element',function(){
   var selected=$(this);
   var prev=$(this).prev().find('img');
   var next=$(this).next().find('img');
-  $('#screen').show();
-  var l=$(".element").length-1;
-  var p=$(".element").index(selected);
+  $('#gg-screen').show();
+  var l=$(".gg-element").length-1;
+  var p=$(".gg-element").index(selected);
   function buttons(){
     if (l > 1) {
       if (p == 0){
-        return '<div class="close bt">&times</div><div class="nxt bt">&rarr;</div>';
+        return '<div class="gg-close gg-bt">&times</div><div class="gg-nxt gg-bt">&rarr;</div>';
       }
       else if (p == l) {
-        return '<div class="close bt">&times</div><div class="prev bt">&larr;</div>';
+        return '<div class="gg-close gg-bt">&times</div><div class="gg-prev gg-bt">&larr;</div>';
       }
       else{
-        return '<div class="close bt">&times</div><div class="nxt bt">&rarr;</div><div class="prev bt">&larr;</div>';
+        return '<div class="gg-close gg-bt">&times</div><div class="gg-nxt gg-bt">&rarr;</div><div class="gg-prev gg-bt">&larr;</div>';
       }
     }
     else{
-      return '<div class="close bt">&times</div>';
+      return '<div class="close gg-bt">&times</div>';
     }
   }
   buttons();
   var content=buttons();
-  $("#screen").html('<div class="image"></div>' + content);
-  $(".image").html('<img src="'+ $('img', this).attr('src') +'">');
+  $("#gg-screen").html('<div class="gg-image"></div>' + content);
+  $(".gg-image").html('<img src="'+ $('img', this).attr('src') +'">');
   $("body").css('overflow','hidden');
-  $(document).on('click','.close',function(){
-    $("#screen").hide();
+  $(document).on('click','.gg-close',function(){
+    $("#gg-screen").hide();
     $("body").css('overflow','auto');
   });
-  $(document).on('click','.prev',function(){
+  $(document).on('click','.gg-prev',function(){
     selected=selected.prev();
     prev=selected.find('img');
     var previmg='<img src="'+ prev.attr('src') +'">';
-    $(".image").html(previmg);
-    p=$(".element").index(selected);
+    $(".gg-image").html(previmg);
+    p=$(".gg-element").index(selected);
     buttons();
     content=buttons();
-    $("#screen").html('<div class="image">'+ previmg + '</div>' + content);
+    $("#gg-screen").html('<div class="gg-image">'+ previmg + '</div>' + content);
   });
-  $('.nxt').on('click','.nxt',function(){
+  $(document).on('click','.gg-nxt',function(){
     selected=selected.next();
     next=selected.find('img');
     var nxtimg='<img src="'+ next.attr('src') +'">';
-    $(".image").html(nxtimg);
-    p=$(".element").index(selected);
+    $(".gg-image").html(nxtimg);
+    p=$(".gg-element").index(selected);
     buttons();
     content=buttons();
-    $("#screen").html('<div class="image">'+ nxtimg + '</div>' + content);
+    $("#gg-screen").html('<div class="gg-image">'+ nxtimg + '</div>' + content);
   });
   $(document).on('keydown',function(e) {
-    if(e.keyCode == 37 && p>0) { // left
+    if(e.keyCode == 37 && p>0) {
       selected=selected.prev();
       prev=selected.find('img');
       var previmg='<img src="'+ prev.attr('src') +'">';
-      $(".image").html(previmg);
-      p=$(".element").index(selected);
+      $(".gg-image").html(previmg);
+      p=$(".gg-element").index(selected);
       buttons();
       content=buttons();
-      $("#screen").html('<div class="image">'+ previmg + '</div>' + content);
+      $("#gg-screen").html('<div class="gg-image">'+ previmg + '</div>' + content);
     }
-    else if(e.keyCode == 39 && p < l) { // right
+    else if(e.keyCode == 39 && p < l) {
       selected=selected.next();
       next=selected.find('img');
       var nxtimg='<img src="'+ next.attr('src') +'">';
-      $(".image").html(nxtimg);
-      p=$(".element").index(selected);
+      $(".gg-image").html(nxtimg);
+      p=$(".gg-element").index(selected);
       buttons();
       content=buttons();
-      $("#screen").html('<div class="image">'+ nxtimg + '</div>' + content);
+      $("#gg-screen").html('<div class="gg-image">'+ nxtimg + '</div>' + content);
     }
   });
 });

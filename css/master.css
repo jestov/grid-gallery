@@ -28,27 +28,27 @@ h1{
   top:0.25em;
   right: 0.5em;
 }
-.box{
+.gg-box{
   display: grid;
   grid-template-columns: repeat(auto-fill, 11em);
   grid-gap: 3px;
   justify-content: center;
 }
-.element{
+.gg-element{
   display: flex;
 }
-.element:nth-child(3n+0){
+.gg-element:nth-child(3n+0){
   grid-row-end: span 2;
 }
-.element img{
+.gg-element img{
   max-width: 100%;
   object-fit: cover;
   cursor: pointer;
 }
-.element img:hover{
+.gg-element img:hover{
   opacity: 0.98;
 }
-.screen{
+#gg-screen{
   position: fixed;
   width: 100%;
   height: 100%;
@@ -58,19 +58,19 @@ h1{
   display: none;
   background: rgba(255,255,255,0.85);
 }
-.screen .image{
+#gg-screen .gg-image{
   height: 100%;
   display: flex;
 justify-content: center; /* align horizontal */
 align-items: center; /* align vertical */
 }
-.screen .image img{
+#gg-screen .gg-image img{
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
   display: flex;
 }
-.bt{
+.gg-bt{
   width: 30px;
   height: 30px;
   background: rgba(0,0,0,0.5);
@@ -87,20 +87,20 @@ align-items: center; /* align vertical */
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.bt:hover{
+.gg-bt:hover{
   background:rgba(0,0,0,0.8);
 }
-.close{
+.gg-close{
   position: fixed;
   top:0.5em;
 }
-.close,.nxt{
+.gg-close,.gg-nxt{
   right: 0.5em;
 }
-.prev{
+.gg-prev{
   left: 0.5em;
 }
-.prev,.nxt{
+.gg-prev,.gg-nxt{
   position: fixed;
   bottom: 50%;
 }
