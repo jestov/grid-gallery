@@ -11,7 +11,7 @@ body{
 .container{
   text-align: center;
   padding: 2em;
-  width: 75em;
+  max-width: 100%;
   margin: 0 auto;
 }
 h1{
@@ -103,4 +103,9 @@ align-items: center; /* align vertical */
 .gg-prev,.gg-nxt{
   position: fixed;
   bottom: 50%;
+}
+@media(max-width:768px){
+  .container h1{
+   font-size:24px;
+  }
 }
