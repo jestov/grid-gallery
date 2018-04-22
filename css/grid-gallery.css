@@ -14,6 +14,7 @@
   max-width: 100%;
   object-fit: cover;
   cursor: pointer;
+  background: #f6f6f6;
 }
 .gg-element img:hover{
   opacity: 0.98;
