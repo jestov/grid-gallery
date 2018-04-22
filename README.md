@@ -15,7 +15,7 @@ A simple and light Grid Gallery
 // Or for the minified file, add this:
 <link rel="stylesheet" type="text/css" href="css/grid-gallery.min.css"/>
 ```
-4) On your ```<body>``` tag add:
+2) On your ```<body>``` tag add:
 ```html
 <div id="gg-screen"></div>
 <div class="gg-box">
@@ -44,4 +44,4 @@ A simple and light Grid Gallery
 
 ### Credits
 
-All images from Unsplash [Unsplash](https://www.unsplash.com)
+All images from [Unsplash](https://www.unsplash.com)
