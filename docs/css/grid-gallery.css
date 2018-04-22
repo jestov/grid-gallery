@@ -72,24 +72,28 @@ align-items: center; /* align vertical */
   display: flex;
 }
 .gg-bt{
-  width: 30px;
-  height: 30px;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
+  width: 38px;
+  height: 38px;
+  background: rgba(255,255,255,0.6);
+  color: #222;
   border-radius: 50%;
   text-align: center;
-  line-height: 27px;
+  line-height: 32px;
   vertical-align: middle;
   display: inline-block;
-  font-weight: 600;
   cursor: pointer;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  font-size: 25px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  padding-left: 2px;
 }
 .gg-bt:hover{
-  background:rgba(0,0,0,0.8);
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.5);
 }
 .gg-close{
   position: fixed;
