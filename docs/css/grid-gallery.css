@@ -50,7 +50,7 @@ h1{
   max-width: 100%;
   object-fit: cover;
   cursor: pointer;
-  background: #f6f6f6;
+  background: rgba(255,255,255,0.2);
 }
 .gg-element img:hover{
   opacity: 0.98;
