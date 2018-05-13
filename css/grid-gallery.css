@@ -4,7 +4,7 @@ body{
 }
 .gg-box{
   display: grid;
-  grid-template-columns: repeat(auto-fill, 11em);
+  grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
   grid-gap: 3px;
   justify-content: center;
 }
