@@ -4,10 +4,10 @@ body{
   margin: 0;
 }
 main{
-  background: #16a085;
+  background:rgba(236, 240, 241,1.0);
   min-height: 98vh;
   margin: 1vh;
-  color: #fff;
+  color: #2c3e50;
   padding-bottom: 2em;
 }
 .main{
@@ -32,7 +32,7 @@ h1{
   position: fixed;
   top:0.5em;
   right: 0.7em;
-  color:#fff;
+  color:#2c3e50;
 }
 .gg-box{
   display: grid;
