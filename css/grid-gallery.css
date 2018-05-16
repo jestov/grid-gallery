@@ -5,8 +5,7 @@ body{
 .gg-box{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
-  grid-gap: 3px;
-  justify-content: center;
+  grid-gap: 4px;
 }
 .gg-element{
   display: flex;
