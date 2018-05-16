@@ -1,10 +1,25 @@
 body{
-  font-family: 'IBM Plex Sans', sans-serif;
-  background: #fff;
+  font-family: 'Poppins', sans-serif;
+  background: #eee;
   margin: 0;
 }
+.logo{
+  width: 45px;
+  height: 45px;
+  color:#fff;
+  background: #2c3e50;
+  font-size: 29px;
+  position: fixed;
+  top:1rem;
+  left: 1rem;
+  border-radius: 50%;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  z-index: 2;
+}
 main{
-  background:rgba(236, 240, 241,1.0);
+  background:#fff;
   min-height: 98vh;
   margin: 1vh;
   color: #2c3e50;
@@ -14,6 +29,7 @@ main{
   width: 65em;
   margin: 0 auto;
   max-width: 100%;
+  padding: 40px 0;
 }
 .container{
   text-align: center;
@@ -37,8 +53,7 @@ h1{
 .gg-box{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
-  grid-gap: 3px;
-  justify-content: center;
+  grid-gap: 4px;
 }
 .gg-element{
   display: flex;
