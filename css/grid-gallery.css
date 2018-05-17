@@ -4,8 +4,8 @@ body{
 }
 .gg-box{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
-  grid-gap: 4px;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-gap: 8px;
 }
 .gg-element{
   display: flex;

@@ -25,15 +25,9 @@ main{
   color: #2c3e50;
   padding-bottom: 2em;
 }
-.main{
-  width: 65em;
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 40px 0;
-}
 .container{
   text-align: center;
-  padding: 2em;
+  padding: 5em 15px;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -43,17 +37,24 @@ h1{
   display: inline-block;
   margin: 0;
 }
+h2{
+  font-family: 'IBM Plex Sans',sans-serif;
+  font-weight: 300;
+  margin: 0;
+  font-size: 18px;
+}
 .github{
   font-size: 2rem;
   position: fixed;
   top:0.5em;
   right: 0.7em;
   color:#2c3e50;
+  z-index: 1;
 }
 .gg-box{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
-  grid-gap: 4px;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-gap: 8px;
 }
 .gg-element{
   display: flex;
