@@ -31,12 +31,13 @@ body{
   left: 0;
   display: none;
   background: rgba(255,255,255,0.85);
+  z-index: 9999;
 }
 #gg-screen .gg-image{
   height: 100%;
   display: flex;
-justify-content: center; /* align horizontal */
-align-items: center; /* align vertical */
+  justify-content: center; 
+  align-items: center;
 }
 #gg-screen .gg-image img{
   max-width: 100%;
