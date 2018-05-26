@@ -132,6 +132,24 @@ h2{
   position: fixed;
   bottom: 50%;
 }
+footer{
+  padding: 4vh 2vh;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  font-weight: 300;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: #fff;
+  margin: 1vh;
+}
+footer a{
+  color: #666;
+  font-weight: 600;
+  text-decoration: none;
+}
+footer a:hover{
+  border-bottom:1px solid #ddd;
+}
 @media(max-width:768px){
   .container h1{
    font-size:24px;
