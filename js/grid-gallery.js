@@ -30,6 +30,12 @@ $(document).on('click','.gg-element',function(){
     $("#gg-screen").hide();
     $("body").css('overflow','auto');
   });
+  $("#gg-screen").on('click', function(e) {
+    if (e.target == this){
+      $("#gg-screen").hide();
+      $("body").css('overflow','auto');
+    }
+  });
   $(document).on('click','.gg-prev',function(){
     selected=selected.prev();
     prev=selected.find('img');
