@@ -1,81 +1,72 @@
-$(document).on('click','.gg-element',function(){
-  var selected=$(this);
-  var prev=$(this).prev().find('img');
-  var next=$(this).next().find('img');
-  $('#gg-screen').show();
-  var l=$(".gg-element").length-1;
-  var p=$(".gg-element").index(selected);
-  function buttons(){
-    if (l > 1) {
-      if (p == 0){
-        return '<div class="gg-close gg-bt">&times</div><div class="gg-nxt gg-bt">&rarr;</div>';
-      }
-      else if (p == l) {
-        return '<div class="gg-close gg-bt">&times</div><div class="gg-prev gg-bt">&larr;</div>';
-      }
-      else{
-        return '<div class="gg-close gg-bt">&times</div><div class="gg-nxt gg-bt">&rarr;</div><div class="gg-prev gg-bt">&larr;</div>';
-      }
-    }
-    else{
-      return '<div class="gg-close gg-bt">&times</div>';
-    }
-  }
-  buttons();
-  var content=buttons();
-  $("#gg-screen").html('<div class="gg-image"></div>' + content);
-  $(".gg-image").html('<img src="'+ $('img', this).attr('src') +'">');
-  $("body").css('overflow','hidden');
-  $(document).on('click','.gg-close',function(){
-    $("#gg-screen").hide();
-    $("body").css('overflow','auto');
+const body = document.querySelector("body");
+const images = document.querySelectorAll(".gg-box img");
+const l = images.length;
+for(var i = 0; i < l; i++) {
+    images[i].addEventListener("click", function(i) {
+        const boxContainer = document.querySelector("#gg-screen");
+        var route = this.src;
+        var currentImg = this;
+        const first = images[0].src;
+        const last = images[l-1].src;
+        boxContainer.hidden = false;
+        body.style.overflow = 'hidden';
+        boxContainer.innerHTML='<div class="gg-image"></div><div class="gg-close gg-bt">&times</div><div class="gg-next gg-bt">&rarr;</div><div class="gg-prev gg-bt">&larr;</div>';
+        const boxImg = document.querySelector(".gg-image");
+        const prevBtn = document.querySelector(".gg-prev");
+        const nextBtn = document.querySelector(".gg-next");
+        const close = document.querySelector(".gg-close");
+        if (l > 1) {
+            if (route == first){
+                prevBtn.hidden = true;
+                var prevImg = false;
+                var nextImg = currentImg.nextElementSibling;
+            }
+            else if (route == last){
+                nextBtn.hidden = true;
+                var nextImg = false;
+                var prevImg = currentImg.previousElementSibling;
+            }
+            else{
+                var prevImg = currentImg.previousElementSibling;
+                var nextImg = currentImg.nextElementSibling;
+            }
+        }
+        else{
+            prevBtn.hidden = true;
+            nextBtn.hidden = true;
+        }
+        boxImg.innerHTML = '<img src="' + route + '">';
+        boxContainer.addEventListener("click", function(e){
+            if (e.target == this || e.target == close){
+              boxContainer.hidden = true;
+              body.style.overflow = 'auto';
+            }
+        });
+        prevBtn.addEventListener("click", function(){
+                prevImg = currentImg.previousElementSibling;
+                boxImg.innerHTML = '<img src="' + prevImg.src + '">';
+                currentImg = currentImg.previousElementSibling;
+                var mainImg = document.querySelector(".gg-image > img").src;
+                if (mainImg == first){
+                    prevBtn.hidden = true;
+                }
+                else{
+                    prevBtn.hidden = false;
+                    nextBtn.hidden = false;
+                }
+        });
+        nextBtn.addEventListener("click", function(){
+                nextImg = currentImg.nextElementSibling;
+                boxImg.innerHTML ='<img src="' + nextImg.src + '">';
+                currentImg = currentImg.nextElementSibling;
+                var mainImg = document.querySelector(".gg-image > img").src;
+                if (mainImg == last){
+                    nextBtn.hidden = true;
+                }
+                else{
+                    nextBtn.hidden = false;
+                    prevBtn.hidden = false;
+                }
+        });
   });
-  $("#gg-screen").on('click', function(e) {
-    if (e.target == this){
-      $("#gg-screen").hide();
-      $("body").css('overflow','auto');
-    }
-  });
-  $(document).on('click','.gg-prev',function(){
-    selected=selected.prev();
-    prev=selected.find('img');
-    var previmg='<img src="'+ prev.attr('src') +'">';
-    $(".gg-image").html(previmg);
-    p=$(".gg-element").index(selected);
-    buttons();
-    content=buttons();
-    $("#gg-screen").html('<div class="gg-image">'+ previmg + '</div>' + content);
-  });
-  $(document).on('click','.gg-nxt',function(){
-    selected=selected.next();
-    next=selected.find('img');
-    var nxtimg='<img src="'+ next.attr('src') +'">';
-    $(".gg-image").html(nxtimg);
-    p=$(".gg-element").index(selected);
-    buttons();
-    content=buttons();
-    $("#gg-screen").html('<div class="gg-image">'+ nxtimg + '</div>' + content);
-  });
-  $(document).on('keydown',function(e) {
-    if(e.keyCode == 37 && p>0) {
-      selected=selected.prev();
-      prev=selected.find('img');
-      var previmg='<img src="'+ prev.attr('src') +'">';
-      $(".gg-image").html(previmg);
-      p=$(".gg-element").index(selected);
-      buttons();
-      content=buttons();
-      $("#gg-screen").html('<div class="gg-image">'+ previmg + '</div>' + content);
-    }
-    else if(e.keyCode == 39 && p < l) {
-      selected=selected.next();
-      next=selected.find('img');
-      var nxtimg='<img src="'+ next.attr('src') +'">';
-      $(".gg-image").html(nxtimg);
-      p=$(".gg-element").index(selected);
-      buttons();
-      content=buttons();
-      $("#gg-screen").html('<div class="gg-image">'+ nxtimg + '</div>' + content);
-    }
-  });
-});
+}

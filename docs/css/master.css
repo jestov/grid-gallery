@@ -55,7 +55,7 @@ h2{
   grid-auto-rows: 200px;
   grid-gap: 8px;
 }
-.gg-element img{
+.gg-box img{
   object-fit: cover;
   cursor: pointer;
   width: 100%;
@@ -63,7 +63,7 @@ h2{
   background: rgba(255,255,255,0.02);
   border-radius: 10px;
 }
-.gg-element img:hover{
+.gg-box img:hover{
   opacity: 0.98;
 }
 #gg-screen{
@@ -73,7 +73,6 @@ h2{
   z-index: 1;
   top:0;
   left: 0;
-  display: none;
   background: rgba(255,255,255,0.85);
   z-index: 9999;
   text-align: center;
@@ -98,7 +97,6 @@ h2{
   text-align: center;
   line-height: 32px;
   vertical-align: middle;
-  display: inline-block;
   cursor: pointer;
   -moz-transition: all .4s ease;
   -o-transition: all .4s ease;
@@ -108,6 +106,7 @@ h2{
   border: 1px solid rgba(0,0,0,0.05);
   box-sizing: border-box;
   padding-left: 2px;
+  float: left;
 }
 .gg-bt:hover{
   background: rgba(255,255,255,0.8);
@@ -128,7 +127,7 @@ h2{
   bottom: 50%;
 }
 @media (min-width:478px){
-  .gg-element:nth-child(3n+0){
+  .gg-box img:nth-child(3n+0){
     grid-row-end: span 2;
   }
 }
