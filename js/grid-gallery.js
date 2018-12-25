@@ -43,30 +43,46 @@ for(var i = 0; i < l; i++) {
             }
         });
         prevBtn.addEventListener("click", function(){
-                prevImg = currentImg.previousElementSibling;
-                boxImg.innerHTML = '<img src="' + prevImg.src + '">';
-                currentImg = currentImg.previousElementSibling;
-                var mainImg = document.querySelector(".gg-image > img").src;
-                if (mainImg == first){
-                    prevBtn.hidden = true;
-                }
-                else{
-                    prevBtn.hidden = false;
-                    nextBtn.hidden = false;
-                }
+            prev();
         });
         nextBtn.addEventListener("click", function(){
-                nextImg = currentImg.nextElementSibling;
-                boxImg.innerHTML ='<img src="' + nextImg.src + '">';
-                currentImg = currentImg.nextElementSibling;
-                var mainImg = document.querySelector(".gg-image > img").src;
-                if (mainImg == last){
-                    nextBtn.hidden = true;
-                }
-                else{
-                    nextBtn.hidden = false;
-                    prevBtn.hidden = false;
-                }
+            next();
         });
+        body.addEventListener("keydown", function(e){
+            if (e.keyCode == 37 || e.keyCode == 38) {
+                prev();
+            }
+        });
+        body.addEventListener("keydown", function(e){
+            if (e.keyCode == 39 || e.keyCode == 40) {
+                next();
+            }
+        });
+        function prev(){
+            prevImg = currentImg.previousElementSibling;
+            boxImg.innerHTML = '<img src="' + prevImg.src + '">';
+            currentImg = currentImg.previousElementSibling;
+            var mainImg = document.querySelector(".gg-image > img").src;
+            if (mainImg == first){
+                prevBtn.hidden = true;
+            }
+            else{
+                prevBtn.hidden = false;
+                nextBtn.hidden = false;
+            }
+        };
+        function next(){
+            nextImg = currentImg.nextElementSibling;
+            boxImg.innerHTML ='<img src="' + nextImg.src + '">';
+            currentImg = currentImg.nextElementSibling;
+            var mainImg = document.querySelector(".gg-image > img").src;
+            if (mainImg == last){
+                nextBtn.hidden = true;
+            }
+            else{
+                nextBtn.hidden = false;
+                prevBtn.hidden = false;
+            }
+        };
   });
 }
