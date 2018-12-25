@@ -89,42 +89,40 @@ h2{
   margin: 0 auto;
 }
 .gg-bt{
-  width: 38px;
-  height: 38px;
-  background: rgba(255,255,255,0.6);
-  color: #222;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 32px;
-  vertical-align: middle;
-  cursor: pointer;
-  -moz-transition: all .4s ease;
-  -o-transition: all .4s ease;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-  font-size: 25px;
-  border: 1px solid rgba(0,0,0,0.05);
-  box-sizing: border-box;
-  padding-left: 2px;
-  float: left;
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.6);
+    color: #222;
+    text-align: center;
+    line-height: 47px;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    font-size: 25px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-sizing: border-box;
+    padding-left: 2px;
+    position: fixed;
+    bottom: 10px;
 }
 .gg-bt:hover{
   background: rgba(255,255,255,0.8);
   border: 1px solid rgba(0,0,0,0.5);
 }
 .gg-close{
-  position: fixed;
-  top:0.5em;
+  top: 10px;
 }
-.gg-close,.gg-nxt{
-  right: 0.5em;
+.gg-close,.gg-next{
+    right: 10px;
 }
 .gg-prev{
-  left: 0.5em;
+    right: 61px;
 }
-.gg-prev,.gg-nxt{
-  position: fixed;
-  bottom: 50%;
+.gg-prev,.gg-next{
+    bottom: 10px;
 }
 @media (min-width:478px){
   .gg-box img:nth-child(3n+0){
