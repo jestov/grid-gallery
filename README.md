@@ -4,7 +4,7 @@ A simple and light Grid Gallery
 
 ## Demo
 
-[https://jestov.github.io/grid-gallery/](https://jestov.github.io/grid-gallery/)
+[https://jestov.com/grid-gallery/](https://jestov.github.io/grid-gallery/)
 
 ## Usage
 
