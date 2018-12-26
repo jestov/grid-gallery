@@ -19,18 +19,10 @@ A simple and light Grid Gallery
 ```html
 <div id="gg-screen"></div>
 <div class="gg-box">
-  <div class="gg-element">
-    <img src="img/your-image-1.jpg">
-  </div>
-  <div class="gg-element">
-    <img src="img/your-image-2.jpg">
-  </div>
-  <div class="gg-element">
-    <img src="img/your-image-3.jpg">
-  </div>
-  <div class="gg-element">
-    <img src="img/your-image-n.jpg">
-  </div>
+  <img src="img/your-image-1.jpg">
+  <img src="img/your-image-2.jpg">
+  <img src="img/your-image-3.jpg">
+  <img src="img/your-image-n.jpg">
 </div>
 ```
 
