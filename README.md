@@ -17,7 +17,7 @@ A simple and light Grid Gallery
 ```
 2) On your ```<body>``` tag add:
 ```html
-<div id="gg-screen"></div>
+<div id="gg-screen" hidden></div>
 <div class="gg-box">
   <img src="img/your-image-1.jpg">
   <img src="img/your-image-2.jpg">
