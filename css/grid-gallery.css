@@ -28,7 +28,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(240, 240, 240, 0.9);
   z-index: 9999;
   text-align: center;
 }
@@ -47,29 +47,27 @@ body {
 }
 
 .gg-bt {
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.6);
-  color: #222;
+  width: 35px;
+  height: 35px;
+  background: #000;
+  color: #fff;
   text-align: center;
-  line-height: 47px;
-  vertical-align: middle;
+  line-height: 35px;
   cursor: pointer;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  font-size: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  font-size: 20px;
   box-sizing: border-box;
   padding-left: 2px;
   position: fixed;
   bottom: 10px;
+  font-weight: 600;
 }
 
 .gg-bt:hover {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #222;
 }
 
 .gg-close {
@@ -82,7 +80,7 @@ body {
 }
 
 .gg-prev {
-  right: 61px;
+  right: 50px;
 }
 
 .gg-prev,

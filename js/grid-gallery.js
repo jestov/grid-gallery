@@ -1,4 +1,4 @@
-const body = document.querySelector("body");
+const body = document.querySelector("body, html");
 const images = document.querySelectorAll(".gg-box img");
 const l = images.length;
 for(var i = 0; i < l; i++) {
