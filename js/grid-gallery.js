@@ -63,26 +63,16 @@ for(var i = 0; i < l; i++) {
             boxImg.innerHTML = '<img src="' + prevImg.src + '">';
             currentImg = currentImg.previousElementSibling;
             var mainImg = document.querySelector(".gg-image > img").src;
-            if (mainImg == first){
-                prevBtn.hidden = true;
-            }
-            else{
-                prevBtn.hidden = false;
-                nextBtn.hidden = false;
-            }
+            nextBtn.hidden = false;
+            prevBtn.hidden = mainImg === first;
         };
         function next(){
             nextImg = currentImg.nextElementSibling;
             boxImg.innerHTML ='<img src="' + nextImg.src + '">';
             currentImg = currentImg.nextElementSibling;
             var mainImg = document.querySelector(".gg-image > img").src;
-            if (mainImg == last){
-                nextBtn.hidden = true;
-            }
-            else{
-                nextBtn.hidden = false;
-                prevBtn.hidden = false;
-            }
+            prevBtn.hidden = false;
+            nextBtn.hidden = mainImg === last;
         };
   });
 }
