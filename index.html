@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" data-theme="light">
   <head>
     <title>Grid Gallery</title>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Language" content="en"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
     <link rel="stylesheet" href="css/grid-gallery.min.css">
@@ -12,46 +11,47 @@
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   </head>
   <body>
-    <div id="gg-screen" hidden></div>
     <nav>
       <a href="/" class="logo">jestov</a>
-      <ul class="menu menu-large">
-        <a href="/about/" class="nav-item ">about</a>
-        <a href="/works/" class="nav-item active">works</a>
-        <a href="/blog/" class="nav-item ">blog</a>
-        <ul class="menu">
-          <a href="https://github.com/jestov" class="icon"><i class="icon ion-logo-github"></i></a>
-          <a href="" class="icon"><i class="icon ion-logo-instagram"></i></a>
+      <div class="group-menu">
+        <ul class="menu menu-large">
+          <a href="/about/" class="nav-item ">about</a>
+          <a href="/works/" class="nav-item ">works</a>
+          <a href="/blog/" class="nav-item ">blog</a>
+          <ul class="menu">
+            <a href="https://github.com/jestov" class="icon"><i class="icon ion-logo-github"></i></a>
+            <a href="" class="icon"><i class="icon ion-logo-instagram"></i></a>
+          </ul>
         </ul>
-      </ul>
-      <details>
+        <ul class="menu">
+          <a id="dark" class="btn" title="Dark Mode"><i class="icon icon-left ion-md-moon"></i> Dark</a>
+          <a id="light" class="btn" title="Light Mode"><i class="icon icon-left ion-md-sunny"></i> Light</a>
+        </ul>
+        <details>
           <summary>
-              <div class="closed">
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-              </div>
-              <div class="open">
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-              </div>
+            <div class="closed">
+              <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <div class="open">
+              <span class="bar"></span><span class="bar"></span>
+            </div>
           </summary>
           <ul class="menu menu-responsive">
             <a href="/about/">about</a>
-            <a href="/works/" class="active">works</a>
+            <a href="/works/">works</a>
             <a href="/blog/">blog</a>
             <ul class="menu">
               <a href="https://github.com/jestov" class="icon"><i class="icon ion-logo-github"></i></a>
               <a href="" class="icon"><i class="icon ion-logo-instagram"></i></a>
             </ul>
           </ul>
-      </details>
+        </details>
+      </div>
     </nav>
+    <div id="gg-screen" hidden></div>
     <div class="content">
       <h1>Grid Gallery<p>A simple and light Grid Gallery with pure JS</p>
-        <a href="https://github.com/jestov/grid-gallery" class="btn">
-          Fork on <i class="icon icon-left ion-logo-github"></i> GitHub <i class="icon ion-md-arrow-forward"></i>
-        </a>
+        <a href="https://github.com/jestov/grid-gallery" class="btn">Fork on <i class="icon icon-left ion-logo-github"></i> GitHub <i class="icon ion-md-arrow-forward"></i></a>
       </h1>
       <div class="gg-box">
         <img src="img/1.jpg">
@@ -75,10 +75,9 @@
         <img src="img/19.jpg">
         <img src="img/20.jpg">
       </div>
-      <footer>
-        Made with <i class="icon ion-md-heart"></i> by <a class="logo mini" href="https://github.com/jestov">jestov</a> from Mexico
-      </footer>
+      <footer>Made with <i class="icon ion-md-heart"></i> by <a class="logo mini" href="https://github.com/jestov">jestov</a> from Mexico</footer>
     </div>
-    <script type="text/javascript" src="js/grid-gallery.min.js"></script>
+    <script src="js/grid-gallery.min.js"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>
