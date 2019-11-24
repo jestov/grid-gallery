@@ -10,7 +10,7 @@ for(var i = 0; i < l; i++) {
         const last = images[l-1].src;
         boxContainer.hidden = false;
         body.style.overflow = 'hidden';
-        boxContainer.innerHTML='<div class="gg-image"></div><div class="gg-close gg-bt">&times</div><div class="gg-next gg-bt">&rarr;</div><div class="gg-prev gg-bt">&larr;</div>';
+        boxContainer.innerHTML='<div class="gg-image"></div><div class="gg-close gg-btn">&times</div><div class="gg-next gg-btn">&rarr;</div><div class="gg-prev gg-btn">&larr;</div>';
         const boxImg = document.querySelector(".gg-image");
         const prevBtn = document.querySelector(".gg-prev");
         const nextBtn = document.querySelector(".gg-next");
