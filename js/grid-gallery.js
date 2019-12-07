@@ -1,21 +1,22 @@
 const body = document.querySelector("body, html");
 const images = document.querySelectorAll(".gg-box img");
 const l = images.length;
+const boxContainer = document.querySelector("#gg-screen");
 
 for(var i = 0; i < l; i++) {
   images[i].addEventListener("click", function(i) {
-    const boxContainer = document.querySelector("#gg-screen");
     var route = this.src;
     var currentImg = this;
     const first = images[0].src;
     const last = images[l-1].src;
     boxContainer.hidden = false;
     body.style.overflow = 'hidden';
-    boxContainer.innerHTML='<div class="gg-image"></div><div class="gg-close gg-btn">&times</div><div class="gg-next gg-btn">&rarr;</div><div class="gg-prev gg-btn">&larr;</div>';
+    boxContainer.innerHTML = '<div class="gg-image"></div><div class="gg-close gg-btn">&times</div><div class="gg-next gg-btn">&rarr;</div><div class="gg-prev gg-btn">&larr;</div>';
     const boxImg = document.querySelector(".gg-image");
     const prevBtn = document.querySelector(".gg-prev");
     const nextBtn = document.querySelector(".gg-next");
     const close = document.querySelector(".gg-close");
+    boxImg.innerHTML = '<img src="' + route + '">';
 
     if (l > 1) {
       if (route == first) {
@@ -38,22 +39,16 @@ for(var i = 0; i < l; i++) {
       nextBtn.hidden = true;
     }
 
-    boxImg.innerHTML = '<img src="' + route + '">';
     boxContainer.addEventListener("click", function(e) {
       if (e.target == this || e.target == close) {
         hide();
       }
     });
+
     body.addEventListener("keydown", function(e) {
       if (e.keyCode == 27 ) {
         hide();
       }
-    });
-    prevBtn.addEventListener("click", function() {
-      prev();
-    });
-    nextBtn.addEventListener("click", function() {
-      next();
     });
 
     body.addEventListener("keydown", function(e) {
@@ -66,6 +61,14 @@ for(var i = 0; i < l; i++) {
       if (e.keyCode == 39 || e.keyCode == 40) {
         next();
       }
+    });
+
+    prevBtn.addEventListener("click", function() {
+      prev();
+    });
+
+    nextBtn.addEventListener("click", function() {
+      next();
     });
 
     function prev() {
@@ -91,4 +94,26 @@ for(var i = 0; i < l; i++) {
       body.style.overflow = 'auto';
     };
   });
+}
+
+function gridGallery (options) {
+  if (options.darkMode) {
+    boxContainer.setAttribute("data-theme", "dark");
+  }
+
+  if (options.layout == "horizontal" || options.layout == "square") {
+    body.setAttribute("data-layout", options.layout);
+  }
+
+  if (options.gapLenght) {
+    body.style.setProperty('--gap-lenght', options.gapLenght + 'px');
+  }
+
+  if (options.rowHeight) {
+    body.style.setProperty('--row-height', options.rowHeight + 'px');
+  }
+
+  if (options.columnWidth) {
+    body.style.setProperty('--column-width', options.columnWidth + 'px');
+  }
 }
