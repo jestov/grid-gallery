@@ -1,7 +1,7 @@
 :root {
   --main-color: #000;
   --secondary-color: #111;
-  --text-color: #fff;
+  --txt-color: #fff;
   --bg-color: rgba(255, 255, 255, 0.02);
   --backdrop-color: rgba(240, 240, 240, 0.9);
   --gap-lenght: 2px;
@@ -16,7 +16,7 @@ body {
 [data-theme="dark"] {
   --main-color: #ddd;
   --secondary-color: #eee;
-  --text-color: #111;
+  --txt-color: #111;
   --bg-color: rgba(20, 20, 20, 0.02);
   --backdrop-color: rgba(30, 30, 30, 0.9);
 }
@@ -68,7 +68,7 @@ body {
   width: 35px;
   height: 35px;
   background: var(--main-color);
-  color: var(--text-color);
+  color: var(--txt-color);
   text-align: center;
   line-height: 35px;
   cursor: pointer;
