@@ -57,7 +57,7 @@ Option | Type | Default | Description | options
 ------ | ---- | ------- | ----------- | -------
 selector | string | null | Element to which the settings are applied to customize the options of a specific gallery | ".class", "#id"
 darkMode | boolean | false | Enable a dark theme for the gallery | true
-layout | string | vertical | Adapts the layout of the gallery box | "horizontal", "square"
+layout | string | "vertical" | Adapts the layout of the gallery box | "horizontal", "square"
 gapLength | number | 2 | Modify the thickness in pixels of the gaps between images 
 rowHeight | number | 200 | Modify the height of images
 columnWidth | number | 220 | Customize the width of images
