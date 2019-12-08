@@ -85,6 +85,7 @@ columnWidth | number | 220 | Customize the width of images
   </div>
 </div>
 ```
+After the main JS file, add:
 
 ```javascript
 gridGallery({
@@ -123,6 +124,7 @@ gridGallery({
   </div>
 </div>
 ```
+After the main JS file, add:
 
 ```javascript
 gridGallery({
