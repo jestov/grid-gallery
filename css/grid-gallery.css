@@ -1,4 +1,6 @@
-:root {
+.gg-container {
+  font-family: sans-serif;
+
   --main-color: #000;
   --secondary-color: #111;
   --txt-color: #fff;
@@ -9,11 +11,7 @@
   --column-width: 220px;
 }
 
-body {
-  font-family: sans-serif;
-}
-
-[data-theme="dark"] {
+.gg-container *[data-theme="dark"] {
   --main-color: #ddd;
   --secondary-color: #eee;
   --txt-color: #111;
