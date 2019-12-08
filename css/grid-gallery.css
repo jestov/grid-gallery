@@ -122,12 +122,12 @@
 @media (max-width: 768px) {
   .gg-box {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: calc(var(--row-height) - 25vh);
+    grid-auto-rows: calc(var(--row-height) - 15vh);
   }
 }
 
 @media (max-width: 450px) {
   .gg-box {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   }
 }
