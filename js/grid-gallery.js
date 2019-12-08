@@ -1,22 +1,28 @@
-const body = document.querySelector("body, html");
-const images = document.querySelectorAll(".gg-box img");
+const root = document.querySelector("body, html");
+const container = document.querySelector('.gg-container');
+const images = document.querySelectorAll(".gg-box > img");
 const l = images.length;
-const boxContainer = document.querySelector("#gg-screen");
 
 for(var i = 0; i < l; i++) {
   images[i].addEventListener("click", function(i) {
-    var route = this.src;
     var currentImg = this;
+    const parentItem = currentImg.parentElement;
+    const screenItem = document.createElement('div');
+    screenItem.id = "gg-screen";
+    container.prepend(screenItem);
+    if ( parentItem.hasAttribute('data-theme') ) {
+      screenItem.setAttribute("data-theme", "dark");
+    }
+    var route = currentImg.src;
+    root.style.overflow = 'hidden';
+    screenItem.innerHTML = '<div class="gg-image"></div><div class="gg-close gg-btn">&times</div><div class="gg-next gg-btn">&rarr;</div><div class="gg-prev gg-btn">&larr;</div>';
     const first = images[0].src;
     const last = images[l-1].src;
-    boxContainer.hidden = false;
-    body.style.overflow = 'hidden';
-    boxContainer.innerHTML = '<div class="gg-image"></div><div class="gg-close gg-btn">&times</div><div class="gg-next gg-btn">&rarr;</div><div class="gg-prev gg-btn">&larr;</div>';
-    const boxImg = document.querySelector(".gg-image");
+    const imgItem = document.querySelector(".gg-image");
     const prevBtn = document.querySelector(".gg-prev");
     const nextBtn = document.querySelector(".gg-next");
     const close = document.querySelector(".gg-close");
-    boxImg.innerHTML = '<img src="' + route + '">';
+    imgItem.innerHTML = '<img src="' + route + '">';
 
     if (l > 1) {
       if (route == first) {
@@ -39,25 +45,25 @@ for(var i = 0; i < l; i++) {
       nextBtn.hidden = true;
     }
 
-    boxContainer.addEventListener("click", function(e) {
+    screenItem.addEventListener("click", function(e) {
       if (e.target == this || e.target == close) {
         hide();
       }
     });
 
-    body.addEventListener("keydown", function(e) {
+    root.addEventListener("keydown", function(e) {
       if (e.keyCode == 27 ) {
         hide();
       }
     });
 
-    body.addEventListener("keydown", function(e) {
+    root.addEventListener("keydown", function(e) {
       if (e.keyCode == 37 || e.keyCode == 38) {
         prev();
       }
     });
 
-    body.addEventListener("keydown", function(e) {
+    root.addEventListener("keydown", function(e) {
       if (e.keyCode == 39 || e.keyCode == 40) {
         next();
       }
@@ -73,7 +79,7 @@ for(var i = 0; i < l; i++) {
 
     function prev() {
       prevImg = currentImg.previousElementSibling;
-      boxImg.innerHTML = '<img src="' + prevImg.src + '">';
+      imgItem.innerHTML = '<img src="' + prevImg.src + '">';
       currentImg = currentImg.previousElementSibling;
       var mainImg = document.querySelector(".gg-image > img").src;
       nextBtn.hidden = false;
@@ -82,7 +88,7 @@ for(var i = 0; i < l; i++) {
 
     function next() {
       nextImg = currentImg.nextElementSibling;
-      boxImg.innerHTML ='<img src="' + nextImg.src + '">';
+      imgItem.innerHTML ='<img src="' + nextImg.src + '">';
       currentImg = currentImg.nextElementSibling;
       var mainImg = document.querySelector(".gg-image > img").src;
       prevBtn.hidden = false;
@@ -90,30 +96,34 @@ for(var i = 0; i < l; i++) {
     };
 
     function hide() {
-      boxContainer.hidden = true;
-      body.style.overflow = 'auto';
+      root.style.overflow = 'auto';
+      screenItem.remove();
     };
   });
 }
 
 function gridGallery (options) {
+  if (options.selector) {
+    selector = document.querySelector(options.selector);
+  }
+
   if (options.darkMode) {
-    boxContainer.setAttribute("data-theme", "dark");
+    selector.setAttribute("data-theme", "dark");
   }
 
   if (options.layout == "horizontal" || options.layout == "square") {
-    body.setAttribute("data-layout", options.layout);
+    selector.setAttribute("data-layout", options.layout);
   }
 
-  if (options.gapLenght) {
-    body.style.setProperty('--gap-lenght', options.gapLenght + 'px');
+  if (options.gaplength) {
+    selector.style.setProperty('--gap-length', options.gaplength + 'px');
   }
 
   if (options.rowHeight) {
-    body.style.setProperty('--row-height', options.rowHeight + 'px');
+    selector.style.setProperty('--row-height', options.rowHeight + 'px');
   }
 
   if (options.columnWidth) {
-    body.style.setProperty('--column-width', options.columnWidth + 'px');
+    selector.style.setProperty('--column-width', options.columnWidth + 'px');
   }
 }

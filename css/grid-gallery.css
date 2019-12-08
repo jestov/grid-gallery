@@ -2,9 +2,9 @@
   --main-color: #000;
   --secondary-color: #111;
   --txt-color: #fff;
-  --img-bg-color: rgba(255, 255, 255, 0.02);
+  --img-bg-color: rgba(240, 240, 240, 0.9);
   --backdrop-color: rgba(240, 240, 240, 0.9);
-  --gap-lenght: 2px;
+  --gap-length: 2px;
   --row-height: 200px;
   --column-width: 220px;
 }
@@ -17,7 +17,7 @@ body {
   --main-color: #ddd;
   --secondary-color: #eee;
   --txt-color: #111;
-  --img-bg-color: rgba(20, 20, 20, 0.02);
+  --img-bg-color: rgba(20, 20, 20, 0.9);
   --backdrop-color: rgba(30, 30, 30, 0.9);
 }
 
@@ -25,7 +25,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
   grid-auto-rows: var(--row-height);
-  grid-gap: var(--gap-lenght);
+  grid-gap: var(--gap-length);
+  margin: 20px 0;
 }
 
 .gg-box img {
@@ -110,11 +111,11 @@ body {
     grid-row-end: span 2;
   }
 
-  [data-layout="horizontal"] .gg-box img:nth-child(3n) {
+  [data-layout="horizontal"] img:nth-child(3n):not(:last-of-type) {
     grid-column-end: span 2;
   }
 
-  [data-layout="square"] .gg-box img:nth-child(3n) {
+  [data-layout="square"] img:nth-child(3n):not(:last-of-type) {
     grid-row-end: span 1;
     grid-column-end: span 1;
   }
