@@ -34,8 +34,9 @@ A simple and light Grid Gallery
 ```
 ## Multiple Galleries
 
- For multiple galleries:
-  ```html
+ Can have multiple galleries:
+ 
+```html
 <div class="gg-container">
   <div class="gg-box"> <!-- first gallery --->
     <img src="img/your-image-1.jpg">
