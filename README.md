@@ -61,7 +61,7 @@ gapLength | number | 2 | Modify the thickness in pixels of the gaps between imag
 rowHeight | number | 200 | Modify the height of images
 columnWidth | number | 220 | Customize the width of images
 
-## Example 
+## Customize especific gallery 
 
 ```html
 <div class="gg-container">
