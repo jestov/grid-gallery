@@ -21,30 +21,10 @@ A simple and light Grid Gallery
   <div class="gg-box">
     <img src="img/your-image-1.jpg">
     <img src="img/your-image-2.jpg">
-    <img src="img/your-image-3.jpg">
     <img src="img/your-image-n.jpg">
   </div>
 </div>
 ```
-  a. For multiple galleries add:
-  ```html
-<div class="gg-container">
-  <div class="gg-box">
-    <img src="img/your-image-1.jpg">
-    <img src="img/your-image-2.jpg">
-    <img src="img/your-image-3.jpg">
-    <img src="img/your-image-n.jpg">
-  </div>
-  
-  <div class="gg-box"> <!--second gallery -->
-    <img src="img/your-image-1.jpg">
-    <img src="img/your-image-2.jpg">
-    <img src="img/your-image-3.jpg">
-    <img src="img/your-image-n.jpg">
-  </div>
-</div>
-```
-
 3. Before your closing ```<body>``` tag add:
 
 ```html
@@ -52,7 +32,24 @@ A simple and light Grid Gallery
 // Or for the minified file, add this:
 <script type="text/javascript" src="js/grid-gallery.min.js"></script>
 ```
+## Multiple Galleries
 
+ For multiple galleries:
+  ```html
+<div class="gg-container">
+  <div class="gg-box"> <!-- first gallery --->
+    <img src="img/your-image-1.jpg">
+    <img src="img/your-image-2.jpg">
+    <img src="img/your-image-n.jpg">
+  </div>
+  
+  <div class="gg-box"> <!-- second gallery -->
+    <img src="img/your-image-1.jpg">
+    <img src="img/your-image-2.jpg">
+    <img src="img/your-image-n.jpg">
+  </div>
+</div>
+```
 ## Settings
 
 Option | Type | Default | Description | options
@@ -64,21 +61,25 @@ gapLength | number | 2 | Modify the thickness in pixels of the gaps between imag
 rowHeight | number | 200 | Modify the height of images
 columnWidth | number | 220 | Customize the width of images
 
-### Example 
+## Example 
 
 ```html
 <div class="gg-container">
   <div class="gg-box"> <!-- This gallery takes it the default values -->
     <img src="img/your-image-1.jpg">
     <img src="img/your-image-2.jpg">
-    <img src="img/your-image-3.jpg">
     <img src="img/your-image-n.jpg">
   </div>
   
   <div class="gg-box" id="square-dark">
     <img src="img/your-image-1.jpg">
     <img src="img/your-image-2.jpg">
-    <img src="img/your-image-3.jpg">
+    <img src="img/your-image-n.jpg">
+  </div>
+  
+  <div class="gg-box" id="horizontal-dark">
+    <img src="img/your-image-1.jpg">
+    <img src="img/your-image-2.jpg">
     <img src="img/your-image-n.jpg">
   </div>
 </div>
@@ -93,7 +94,44 @@ gridGallery({
  rowHeight: 180,
  columnWidth: 200
 });
+
+gridGallery({
+ selector: "#horizontal-dark",
+ darkMode: true,
+ layout: "horizontal",
+ gapLength: 10,
+ rowHeight: 150,
+ columnWidth: 190
+});
 ```
+
+## Customize multiple galleries
+
+```html
+<div class="gg-container">
+  <div class="gg-box square-gallery">
+    <img src="img/your-image-1.jpg">
+    <img src="img/your-image-2.jpg">
+    <img src="img/your-image-n.jpg">
+  </div>
+  
+  <div class="gg-box square-gallery">
+    <img src="img/your-image-1.jpg">
+    <img src="img/your-image-2.jpg">
+    <img src="img/your-image-n.jpg">
+  </div>
+</div>
+```
+
+```javascript
+gridGallery({
+ selector: ".square-gallery",
+ layout: "square",
+ gapLength: 1,
+ columnWidth: 200
+});
+```
+
 ### Credits
 
 All images from [Unsplash](https://www.unsplash.com)
