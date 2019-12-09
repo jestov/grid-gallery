@@ -103,15 +103,15 @@
 }
 
 @media (min-width: 478px) {
-  .gg-box img:nth-child(3n):not(:last-of-type) {
+  .gg-box img:nth-child(2n):not(:last-of-type) {
     grid-row-end: span 2;
   }
 
-  [data-layout="horizontal"] img:nth-child(3n):not(:last-of-type) {
+  [data-layout="horizontal"] img:nth-child(2n):not(:last-of-type) {
     grid-column-end: span 2;
   }
 
-  [data-layout="square"] img:nth-child(3n):not(:last-of-type) {
+  [data-layout="square"] img:nth-child(2n):not(:last-of-type) {
     grid-row-end: span 1;
     grid-column-end: span 1;
   }
