@@ -66,7 +66,47 @@
           <img src="img/17.jpg">
           <img src="img/18.jpg">
         </div>
+        <h3>Horizontal Layout</h3>
+        <div class="gg-box dark" id="horizontal">
+          <img src="img/1.jpg">
+          <img src="img/2.jpg">
+          <img src="img/3.jpg">
+          <img src="img/4.jpg">
+          <img src="img/5.jpg">
+          <img src="img/6.jpg">
+        </div>
+        <h3>Square Layout</h3>
+        <div class="gg-box dark" id="square">
+          <img src="img/13.jpg">
+          <img src="img/14.jpg">
+          <img src="img/15.jpg">
+          <img src="img/16.jpg">
+          <img src="img/17.jpg">
+          <img src="img/18.jpg">
+        </div>
+        <h3>Customized Gap</h3>
+        <p>Gap between images with value of 10px</p>
+        <div class="gg-box" id="gap">
+          <img src="img/6.jpg">
+          <img src="img/7.jpg">
+          <img src="img/8.jpg">
+          <img src="img/9.jpg">
+          <img src="img/10.jpg">
+          <img src="img/11.jpg">
+          <img src="img/12.jpg">
+        </div>
+        <h3>Row Height and Column Width</h3>
+        <p>Row Height with value of 180px and column width with value of 280px</p>
+        <div class="gg-box dark" id="heightWidth">
+          <img src="img/13.jpg">
+          <img src="img/14.jpg">
+          <img src="img/15.jpg">
+          <img src="img/16.jpg">
+          <img src="img/17.jpg">
+          <img src="img/18.jpg">
+        </div>
       </div>
+      <a href="https://github.com/jestov/grid-gallery" class="btn btn-inline">Fork on <i class="icon icon-left ion-logo-github"></i> GitHub<i class="icon ion-md-arrow-forward"></i></a><a href="https://github.com/jestov/grid-gallery/blob/master/README.md" class="btn btn-inline">Docs<i class="icon ion-md-arrow-forward"></i></a><a href="https://github.com/jestov/grid-gallery/archive/master.zip" class="btn btn-inline">Download<i class="icon ion-md-arrow-down"></i></a>
       <footer>Made with <i class="icon ion-md-heart"></i> by <a class="logo mini" href="https://github.com/jestov">jestov</a> from Mexico</footer>
     </div>
     <script src="js/grid-gallery.min.js"></script>
@@ -74,6 +114,23 @@
     gridGallery({
       selector: ".dark",
       darkMode: true
+    });
+    gridGallery({
+      selector: "#horizontal",
+      layout: "horizontal"
+    });
+    gridGallery({
+      selector: "#square",
+      layout: "square"
+    });
+    gridGallery({
+      selector: "#gap",
+      gaplength: 10
+    });
+    gridGallery({
+      selector: "#heightWidth",
+      rowHeight: 180,
+      columnWidth: 280
     });
     </script>
     <script src="/assets/js/main.js"></script>
