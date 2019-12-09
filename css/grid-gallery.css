@@ -121,6 +121,7 @@
   .gg-box {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-auto-rows: calc(var(--row-height) - 15vh);
+    margin: 10px 0;
   }
 }
 
