@@ -109,6 +109,7 @@
 
   [data-layout="horizontal"] img:nth-child(2n):not(:last-of-type) {
     grid-column-end: span 2;
+    grid-row-end: span 1;
   }
 
   [data-layout="square"] img:nth-child(2n):not(:last-of-type) {
