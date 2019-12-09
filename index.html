@@ -38,8 +38,9 @@
     </nav>
 
     <div class="content">
-      <h1>Grid Gallery<p>A simple and light Grid Gallery with pure JS</p><a href="https://github.com/jestov/grid-gallery" class="btn">Fork on <i class="icon icon-left ion-logo-github"></i> GitHub <i class="icon ion-md-arrow-forward"></i></a></h1>
+      <h1>Grid Gallery<p>A simple and light Grid Gallery with pure JS</p><a href="https://github.com/jestov/grid-gallery" class="btn btn-inline">Fork on <i class="icon icon-left ion-logo-github"></i> GitHub<i class="icon ion-md-arrow-forward"></i></a><a href="https://github.com/jestov/grid-gallery/blob/master/README.md" class="btn btn-inline">Docs<i class="icon ion-md-arrow-forward"></i></a><a href="https://github.com/jestov/grid-gallery/archive/master.zip" class="btn btn-inline">Download<i class="icon ion-md-arrow-down"></i></a></h1>
       <div class="gg-container">
+        <h3>Default</h3>
         <div class="gg-box">
           <img src="img/1.jpg">
           <img src="img/2.jpg">
@@ -53,6 +54,9 @@
           <img src="img/10.jpg">
           <img src="img/11.jpg">
           <img src="img/12.jpg">
+        </div>
+        <h3>Dark Mode</h3>
+        <div class="gg-box dark">
           <img src="img/13.jpg">
           <img src="img/14.jpg">
           <img src="img/15.jpg">
@@ -64,6 +68,12 @@
       <footer>Made with <i class="icon ion-md-heart"></i> by <a class="logo mini" href="https://github.com/jestov">jestov</a> from Mexico</footer>
     </div>
     <script src="js/grid-gallery.min.js"></script>
+    <script>
+    gridGallery({
+      selector: ".dark",
+      darkMode: true
+    });
+    </script>
     <script src="/assets/js/main.js"></script>
   </body>
 </html>
